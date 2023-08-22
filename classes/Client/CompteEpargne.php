@@ -7,6 +7,13 @@ class CompteEpargne extends Compte
     private $tauxInterets;
     
 
+    /**
+     * Constructeur du compte epargne
+     *
+     * @param string $nom Nom du titulaire
+     * @param float $montant Montant du solde 
+     * @param integer $taux
+     */
     public function __construct(string $nom, float $montant, int $taux)
     {
         parent::__construct($nom, $montant);
@@ -32,5 +39,9 @@ class CompteEpargne extends Compte
         $this->tauxInterets = $tauxInterets;
 
         return $this;
+    }
+
+    public function versertInterets(){
+        $this->solde = $this-> solde + ($this->solde * $this->tauxInterets /100);
     }
 }

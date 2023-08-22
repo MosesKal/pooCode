@@ -12,6 +12,12 @@
     $compte1 = new CompteCourant('Moses', 500, 200);
     var_dump($compte1);
 
+    $compteEpargne = new CompteEpargne("Mosesdev", 200, 10);
+
+    $compteEpargne->versertInterets();
+
+    var_dump($compteEpargne);
+
 
 
    
