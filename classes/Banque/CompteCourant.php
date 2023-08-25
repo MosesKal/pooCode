@@ -1,4 +1,6 @@
 <?php
+
+namespace App\Client;
 /**
  * Compte bancaire (etend la class Compte)
  */
