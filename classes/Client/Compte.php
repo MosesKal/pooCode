@@ -4,7 +4,7 @@ namespace App\Client;
 /**
  * Objet Compte banquaire
  */
- abstract class Compte
+class Compte
 {
     //prorietes
     /**

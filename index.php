@@ -5,17 +5,20 @@
 
     use App\Autoloader;
     use App\Client\Compte as CompteClient;
-    use App\Banque\Compte as CompteBanque;
+    use App\Banque\{CompteCourant, CompteEpargne};
 
     require_once './classes/Autoloader.php';
     Autoloader::register();
 
-    $client = new CompteClient("Kalunga", 1000);
-    $banque = new CompteBanque();
+    $compteClient = new CompteClient("Kalunga", 1000);
+    $compteCourant = new CompteCourant("Mosesdev",5000,5);
+    $compteEpargne = new CompteEpargne("Chrino", 1200.3, 10);
 
     //on instancie le compte
 
-    var_dump($compteEpargne);
+    echo "<hr>".var_dump($compteClient);
+    echo "<br><hr>". var_dump($compteCourant);
+    echo "<br>". var_dump($compteEpargne);
 
     // $compte2 = new Compte("Mosesdev", 389.25);
 

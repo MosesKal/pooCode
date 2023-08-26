@@ -1,5 +1,7 @@
 <?php
 
+namespace App\Banque;
+
 /**
  * Compte avec taux d'interets
  */
