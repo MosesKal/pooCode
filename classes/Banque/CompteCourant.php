@@ -1,6 +1,7 @@
 <?php
 
 namespace App\Banque;
+use App\Client\Compte as CompteClient;
 /**
  * Compte bancaire (etend la class Compte)
  */
@@ -17,9 +18,9 @@ class CompteCourant extends Compte
      * @param integer $decouvert Decouver autorise
      * @return void
      */
-    public function __construct(string $nom, float $montant, int $decouvert)
+    public function __construct(CompteClient $compte, float $montant, int $decouvert)
     {
-        parent::__construct($nom, $montant);
+        parent::__construct($compte, $montant);
         $this->decouvert = $decouvert;
     }
 

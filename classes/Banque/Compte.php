@@ -1,6 +1,9 @@
 <?php 
 
 namespace App\Banque;
+
+use App\Client\Compte as CompteClient;
+
 /**
  * Objet Compte banquaire
  */
@@ -10,9 +13,9 @@ namespace App\Banque;
     /**
      * Titulaire du compte
      *
-     * @var string
+     * @var CompteClient
      */
-    protected $titulaire;
+    protected CompteClient $titulaire;
 
     /**
      * Solde du Compte
@@ -24,12 +27,12 @@ namespace App\Banque;
 
     /**
      * Constructeur du compte bancaire
-     * @param string $titulaire Nom du titulaire du compte bancaire
+     * @param CompteClient $ Nom du tCompteClient itulaire du compte bancaire
      * @param float $sode solde du compte bancaire a l'ouverture
      */
-    public function __construct(string $titulaire, float $solde=100)
+    public function __construct(CompteClient $compte, float $solde=100)
     {
-        $this->titulaire = $titulaire;
+        $this->titulaire = $compte;
         $this->solde = $solde;
     }
 
@@ -43,9 +46,9 @@ namespace App\Banque;
     /**
      * Getter de titulaire - Retourne la valeur du titulaire du Compte
      *
-     * @return string
+     * @return CompteClient
      */
-    public function getTitulaire(): string
+    public function getTitulaire(): CompteClient
     {
         return $this->titulaire;
     }
@@ -53,13 +56,13 @@ namespace App\Banque;
     /**
      * Modifie le nom du titulaire et retourne l'objet
      *
-     * @param string $nom
+     * @param CompteClient $compte Compte client du titulaire
      * @return Compte Compte bancaire
      */
-    public function setTitulaire(string $nom): self
+    public function setTitulaire(CompteClient $compte): self
     {
-        if($nom !== ""){
-            $this -> titulaire = $nom;
+        if(isset($compte)){
+            $this -> titulaire = $compte;
         }
         return $this;
     }
