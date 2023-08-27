@@ -10,10 +10,10 @@
     require_once './classes/Autoloader.php';
     Autoloader::register();
 
-    $compteClient = new CompteClient("Kalunga", "MosesDev");
-    $compteCourant = new CompteCourant("Kalunga", "MosesDev",5000,5);
-    $compteEpargne = new CompteEpargne("Zyongo","Chrino", 1200.3, 10);
-    $client = new CompteClient("Gloire", 'Eliezer');
+    $compteClient = new CompteClient("Kalunga", "MosesDev", "Lubumbashi");
+    $compteCourant = new CompteCourant($compteClient,5000,5);
+    $compteEpargne = new CompteEpargne($compteClient, 1200.3, 10);
+    $client = new CompteClient("Gloire", 'Eliezer', 'Kol');
 
     //on instancie le compte
 
