@@ -9,7 +9,6 @@ class CompteCourant extends Compte
 {
     private $decouvert;
 
-
     /**
      * Constructeur de compte courant
      *
